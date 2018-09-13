@@ -73,12 +73,11 @@ void MemList::displayReserved()
 //
 MemList::MemList(unsigned int s_addr, unsigned int block_size)
 {
-    MemList * Free = new MemList(s_addr, block_size);    // create Free List, passing in start address and block size
-    MemBlock(s_addr, block_size);                        // create MemBlock, passing in same
-    free_head = start_addr;                              // ATTEMPTING to set free_head to mem_start_addr
-    MemList * Reserved = new MemList();
-    MemBlock();
-    reserved_head = NULL;
+    MemBlock * free = new MemBlock(s_addr, block_size);
+    free_head = free;
+
+    MemBlock * reserved = new MemBlock();
+    reserved_head = reserved;
 }
 
 // Find the first MemBlock in the Free list which greater than or equal to the amount requested(via 
@@ -93,7 +92,7 @@ MemList::MemList(unsigned int s_addr, unsigned int block_size)
 MemBlock * MemList::reserveMemBlock(unsigned int block_size)
 {
     // To be implemented
-    return NULL;                                         // we want this to return the starting address of this block
+    return NULL;
 }
 
 // Return the total size of all blocks in the Reserved List

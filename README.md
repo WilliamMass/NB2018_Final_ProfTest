@@ -90,9 +90,9 @@ should all pass without any implementation updated.
 Level 1
 -------
 
-This is the first level were you need to contribute code. The first step
-is creating a complete constructor for MemList. You also need to add
-functionality to "move" memory into the Reserve List from the Free List.
+The first step is creating a complete constructor for MemList. You also
+need to add functionality to "move" memory into the Reserve List from
+the Free List.
 
 Implement the following methods. The prototypes can be found in
 MemList.hpp. Also, the function skeletons are included in MemList.cpp.:
