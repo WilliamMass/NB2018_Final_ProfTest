@@ -3,7 +3,7 @@
 // 
 // memtest.cpp
 //
-// Test main function for New Beginnings Final Proficiency Exame
+// Test main function for New Beginnings Final Proficiency Exam
 // 2018
 
 #include <iostream>

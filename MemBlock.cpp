@@ -36,17 +36,17 @@ unsigned int MemBlock::getSize() {
     return size;
 }
 
-// Return the size of the current memory block
+// Set the size of the current memory block
 void MemBlock::setSize(unsigned int s) {
     size = s;
 }
 
-// Return the size of the current memory block
+// Return the starting address of the current memory block
 unsigned int MemBlock::getAddr() {
     return start_addr;
 }
 
-// Return the size of the current memory block
+// Set the starting address of the current memory block
 void MemBlock::setAddr(unsigned int addr) {
     start_addr = addr;
 }
