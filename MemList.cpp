@@ -74,7 +74,7 @@ void MemList::displayReserved()
 MemList::MemList(unsigned int s_addr, unsigned int block_size)
 {
     MemBlock * free = new MemBlock(s_addr, block_size);
-    free_head = free;
+    free_head = free;                                    // 
 
     MemBlock * reserved = new MemBlock();
     reserved_head = reserved;
@@ -92,6 +92,9 @@ MemList::MemList(unsigned int s_addr, unsigned int block_size)
 MemBlock * MemList::reserveMemBlock(unsigned int block_size)
 {
     // To be implemented
+
+    // DIAGRAM THIS OUT, that will help you solve it
+
     return NULL;
 }
 
@@ -101,8 +104,14 @@ MemBlock * MemList::reserveMemBlock(unsigned int block_size)
 //
 unsigned int MemList::reservedSize()
 {
-    // To be implemented
-    return 0;
+    unsigned int size = 0;
+    MemBlock * next;
+    next = reserved_head;
+    while (next != NULL) {
+      size = size + next -> getSize();
+      next = next -> getNext();
+    }
+    return size;
 }
 
 // Return the total size of all blocks in the Free List
@@ -110,8 +119,14 @@ unsigned int MemList::reservedSize()
 // Level 1
 unsigned int MemList::freeSize()
 {
-    // To be implemented
-    return 0;
+    unsigned int size = 0;
+    MemBlock * next;
+    next = free_head;
+    while (next != NULL) {
+      size = size + next -> getSize();
+      next = next -> getNext();
+    }
+    return size;
 }
 
 /////////////////////////////////////////////////////////////////////////////////
